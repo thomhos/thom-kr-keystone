@@ -1,0 +1,23 @@
+$leader_max-width 					= 960px
+$leader_top-bottom-padding 			= 40px
+$leader_top-bottom-padding--large 	= 80px
+$leader_content-margin 				= 40px
+
+.leader
+	max-width: $leader_max-width
+	padding: $leader_top-bottom-padding $grid-padding
+	margin: 0 auto
+	
+	+above('m')
+		padding: $leader_top-bottom-padding--large $grid-padding
+		text-align: center
+	
+	h1,
+	p,
+	.leader__tags
+		margin-bottom: $leader_content-margin
+		
+	.leader__tags
+		max-width: 400px
+		margin-left: auto
+		margin-right: auto

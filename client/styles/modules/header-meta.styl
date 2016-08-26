@@ -1,0 +1,24 @@
+$header_meta-padding 			= 10px
+$header_meta-spacing 			= 10px
+
+.header__meta
+	col(12)
+	padding: $header_meta-padding 0
+	text-align: right;
+
+	button
+		@extend $button-base
+		
+		color: $color-white
+		font-family: $font-primary
+		font-size: 0
+		
+		+above('m')
+			margin-left: $header_meta-spacing
+			font-size: $font-size-body
+			
+			&:hover
+				text-decoration: underline
+		
+		svg
+			margin-left: $header_meta-spacing

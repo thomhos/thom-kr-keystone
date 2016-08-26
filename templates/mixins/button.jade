@@ -1,0 +1,7 @@
+include ../mixins/svg
+
+mixin button(data)
+	button(
+		href=data.href
+		class="button #{data.class}"
+	)= data.label

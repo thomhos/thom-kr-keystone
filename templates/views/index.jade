@@ -1,0 +1,22 @@
+extends ../layouts/default
+
+include ../mixins/button
+include ../mixins/tag
+
+block content
+	.row--grey
+		.leader
+			h1 A creative product developer
+			p.text--intro.
+				Lorem ipsum dolor sit amet, cum eu aliquip veritus, an est sonet accusata convenire. Mel cu graeci minimum scaevola, quo case alienum te, causae accusamus mel id. Nec nobis definitiones ex, verear tacimates eos in, ne saepe eligendi eam. 
+
+			div.leader__tags
+				+tag({ label: 'AngularJS' })
+				+tag({ label: 'AngularJS' })
+				+tag({ label: 'AngularJS' })
+				+tag({ label: 'AngularJS' })
+
+			div.leader__cta
+				+button({ label: 'View work', href: '/work' })
+
+				+button({ class: 'button--secondary', label: 'Contact me', href: '/contact' })

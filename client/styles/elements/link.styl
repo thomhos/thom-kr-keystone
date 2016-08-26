@@ -1,0 +1,57 @@
+$link-transition-time = 120ms
+$link-transition-ease = ease-in-out
+
+$link-base
+	color: inherit
+	cursor: pointer
+	text-decoration: none
+	text-overflow: ellipsis
+
+a
+	@extend $link-base
+
+$link
+	color: $color-primary
+	transition: color $link-transition-time $link-transition-ease
+
+	&:hover,
+	&:focus
+		color: darken($color-primary, 10%)
+
+	&:active
+		color: darken($color-primary, 20%)
+		
+$link--header
+	position: relative
+	
+	font-size: 2.2rem
+	line-height: 2
+	color: $color-white
+	text-transform: uppercase
+	
+	&:hover,
+	&:focus
+		&:after
+			width: 40%
+			
+	&.is-active
+		font-weight: $font-weight-black
+		
+		&:after
+			height: 4px
+			width: 40%
+	
+	&:after
+		content: ''
+		position: absolute
+		display: block
+		
+		top: 105%
+		left: 0
+
+		width: 0
+		height: 2px
+
+		background-color: $color-white
+		
+		transition: width $link-transition-time $link-transition-ease

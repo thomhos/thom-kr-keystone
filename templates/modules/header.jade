@@ -1,0 +1,31 @@
+include ../mixins/svg
+
+.row--primary-dark
+	.container 
+		.header__meta
+			nav
+				button Start a chat
+					+svg('chat')
+				button Search...
+					+svg('search')
+				button 
+					span.js-language-option en
+					|	 / 
+					span.js-language-option kr
+					+svg('language')
+
+.row--primary
+	.container
+		.header__main
+			a.header__logo(href="/") Thom Hos
+
+			nav.header__navigation
+				ul
+					each link in navLinks
+						li
+							a.header__link(href=link.href class=(section == link.key ? 'is-active' : null))= link.label
+
+			button.header__burger
+				span
+				span
+				span

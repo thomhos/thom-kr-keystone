@@ -1,0 +1,111 @@
+$header_main-padding 			= 20px
+$header_main-padding--large 	= 130px
+$header_main-link-spacing 		= 20px
+$header_transition-time 		= 200ms
+$header_transition-ease 		= ease-in-out
+
+.header__main
+	col(12)
+	position: relative
+	display: inline-block
+	padding: $header_main-padding 0
+	
+	text-align: left
+	
+	+above('m')
+		padding: $header_main-padding--large 0
+	
+	.header__logo		
+		font-size: 3.6rem
+		font-weight: $font-weight-black
+		color: $color-white
+		text-transform: uppercase
+		
+		+above('m')
+			position: absolute
+			top: 50%
+			left: 0
+			transform: translateY(-50%)
+
+
+	.header__navigation
+		text-align: right
+		
+		+mobile()
+			position: absolute
+			
+			top: 100%
+			left: - $grid-padding
+			
+			width: 'calc( 100% + ( %s * 2 ))' % $grid-padding
+			
+			padding: $grid-padding
+			
+			background-color: $color-primary-medium
+			
+			transform: translateY(10%)
+			opacity: 0
+			
+			transition-property: transform, opacity
+			transition: $header_transition-time $header_transition-ease
+			
+			&.is-active
+				transform: translateY(0)
+				opacity: 1
+		
+		+above('m')
+			ul
+				li
+					display: inline-block
+					margin-left: $header_main-link-spacing
+	
+		.header__link
+			@extend $link--header
+
+
+	.header__burger
+		position: absolute
+		display: block
+		
+		top: 50%
+		right: 0
+		transform: translateY(-50%)
+		
+		width: 40px
+		height: 40px
+		
+		+above('m')
+			display: none
+		
+		&.is-active
+			span					
+				&:nth-child(2)
+					right: 10px
+				
+				&:nth-child(3)
+					right: 20px
+		
+		span
+			position: absolute
+			display: block
+
+			right: 0
+			
+			height: 4px
+			
+			background-color: $color-white
+			
+			transition: right $header_transition-time $header_transition-ease
+			
+			&:nth-child(1)
+				top: 6px
+				width: 30px
+				
+			&:nth-child(2)
+				top: 16px
+				width: 20px
+			
+			&:nth-child(3)
+				top: 26px
+				width: 10px
+

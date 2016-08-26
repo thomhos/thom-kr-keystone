@@ -1,0 +1,50 @@
+// Generate rows
+row(color = null)
+	if (color is null)
+		background-color: $color-white
+	else 
+		background-color: color
+
+
+// Generate a container
+container($maxwidth = null, $gutter = null)
+	margin-left: auto;
+	margin-right: auto;
+		
+	if ($maxwidth is null)
+		max-width: $grid-max-width
+	else
+		max-width: $maxwidth
+	
+	if ($gutter is null)
+		padding-left: $grid-padding
+		padding-right: $grid-padding
+	else
+		padding-left: $gutter
+		padding-right: $gutter
+		
+
+// Generate cols with the correct width
+col(s = null, m = null, l = null, xl = null)
+	if (s is null)
+		s = 12
+	
+	if (m is null)
+		m = 12
+	
+	if (l is null)
+		l = 12
+	
+	if (xl is null)
+		xl = 12
+
+	width: percentage((s / $grid-columns))
+	
+	+above('m')
+		width: percentage((m / $grid-columns))
+		
+	+above('l')
+		width: percentage((l / $grid-columns))
+		
+	+above('xl')
+		width: percentage((xl / $grid-columns))

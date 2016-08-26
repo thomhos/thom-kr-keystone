@@ -1,0 +1,20 @@
+@import 'rupture'
+
+//- Screen sizes
+$breakpoints = {
+    s: 480px,
+    m: 767px,
+    l: 1023px,
+    xl: 1279px,
+    xxl: 1980px
+}
+
+rupture.base-font-size 	= 10px;
+
+rupture.mobile-cutoff 	= $breakpoints.m
+rupture.desktop-cutoff 	= $breakpoints.l
+rupture.hd-cutoff 		= $breakpoints.xl
+
+// Somehow we can't use the object like this; breakpoints.s ???
+rupture.scale  			= 0 480px 767px 1023px 1279px 1980px
+rupture.scale-names 	= 'xs' 's' 'm' 'l' 'xl'

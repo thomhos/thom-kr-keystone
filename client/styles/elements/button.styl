@@ -1,0 +1,47 @@
+$button-transition-time = 130ms
+$button-transition-ease = ease-in-out
+
+$button-base
+    position: relative
+    display: inline-block
+    cursor: pointer
+    user-select: none
+    text-decoration: none
+    vertical-align: top
+    background: none
+    border: none;
+
+$button,
+.button
+	@extend $button-base
+	
+	height: 40px;
+	
+	margin-top: 0px
+	padding: 0 20px;
+
+	color: $color-white
+	font-family: $font-primary
+	text-align: center
+	font-size: $font-size-button
+	line-height: 1.5
+	
+	background-color: $color-primary	
+	border-radius: 20px;
+	
+	box-shadow: $color-primary-medium 0 4px 0
+
+	transition: $button-transition-time $button-transition-ease
+	transition-property: margin-top, box-shadow, background-color
+
+	&:focus, 
+	&:hover
+		margin-top: 2px
+		box-shadow: $color-primary-medium 0 2px 0
+		background-color: darken($color-primary, 5%)
+
+	&.button--secondary
+		background-color: $color-white
+		border: 2px solid $color-primary
+		
+		color: $color-primary
